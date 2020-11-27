@@ -8,6 +8,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class TestProg {
+Main main = new main();
     @Test
     public void testReadData() throws FileNotFoundException {
         Main main = new Main();
@@ -18,5 +19,14 @@ public class TestProg {
         }
         assertEquals(test2, test);
     }
+
+@Test
+public void testSearchBiggestPalindrome(){
+List<String> data = new ArrayList();
+{
+data.add("qw wq");
+}
+assertEquals(5, main.searchBiggestPalindrome(data));
+}
 
 }

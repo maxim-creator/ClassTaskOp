@@ -5,8 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class TestProg {
     Main main = new Main();
@@ -34,6 +33,7 @@ public class TestProg {
     @Test
     public void testIsPalindrome(){
         assertTrue(main.isPalindrome("qwwq"));
+        assertFalse(main.isPalindrome("qwe"));
     }
 
 }

@@ -6,16 +6,21 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args)  {
         List<String> data = readData("input.txt");
         int len = searchBiggestPalindrome(data);
         writeAnswer(len);
 
     }
 
-    public static List readData(String fileName) throws FileNotFoundException {
+    public static List readData(String fileName)  {
         File file = new File(fileName);
-        Scanner scanner = new Scanner(file);
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            System.out.println("file not found");
+        }
         List<String> data = new ArrayList();
         while (scanner.hasNext())
             data.add(scanner.nextLine());
